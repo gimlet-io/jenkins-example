@@ -1,0 +1,12 @@
+app: jenkins-example
+env: staging
+namespace: my-team
+chart:
+  repository: https://chart.onechart.dev
+  name: onechart
+  version: 0.10.0
+values:
+  replicas: 1
+  image:
+    repository: ghcr.io/gimlet-io/jenkins-example
+    tag: {{ .GIT_COMMIT }}
